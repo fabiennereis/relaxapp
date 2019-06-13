@@ -10,7 +10,7 @@ const app = () => {
 
     sounds.forEach(sound => {
         sound.addEventListener('click', function () {
-            name = getRndInteger(1,5);
+            name = getRndInteger(1,6);
             let path = `./sounds/${name}.mp3`;
             sound.setAttribute('data-sound', path );
             song.src = this.getAttribute('data-sound');
