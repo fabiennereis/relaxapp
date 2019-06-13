@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Relax App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-link"><a href="">Home</a></li>
+                <li class="nav-link"><a href="">Sounds</a></li>
+                <li class="nav-link"><a href="">Downloads</a></li>
+                <li class="nav-link"><a href="">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="time">
+                <button data-time="120">2 min</button>
+                <button data-time="300">5 min</button>
+                <button data-time="600">10 min</button>
+            </div>
+            <div class="play">
+                <audio class="song">
+                    <source src="./sounds/The_Quiet_Morning_-_David_Fesliyan.mp3" />
+                </audio>
+                <img src="./img/play-icon.png" alt="play">
+                <h3 class="time-display">0:00</h3>
+            </div>
+            <div class="pause">
+                    <img src="./img/pause-icon.png" alt="play">
+            </div>
+        </div>
+       
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>
