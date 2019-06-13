@@ -1,14 +1,34 @@
 const app = () => {
-    const song = document.querySelector('.song');
+    const song = document.querySelector('.song');   
     const play = document.querySelector('.start');
     const timeDisplay = document.querySelector('.time-display');
     const timeSelect = document.querySelectorAll('.time button');
+    const sounds = document.querySelectorAll('.sounds button');
+    let name = '';
     let fakeDuration = 600;
 
+
+    sounds.forEach(sound => {
+        sound.addEventListener('click', function () {
+            name = getRndInteger(1,5);
+            let path = `./sounds/${name}.mp3`;
+            sound.setAttribute('data-sound', path );
+            song.src = this.getAttribute('data-sound');
+             console.log(name);
+             isPlaying(song);
+         });
+    });
+        
+   
+
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+      }
 
     play.addEventListener('click', () => {
         isPlaying(song);
     });
+
 
     const isPlaying = song => {
         if (song.paused) {
@@ -27,7 +47,7 @@ const app = () => {
         let minutes = Math.floor(elapsed / 60);
         timeDisplay.textContent = `${minutes}:${seconds}`;
 
-        if(currentTime >= fakeDuration) {
+        if (currentTime >= fakeDuration) {
             song.pause();
             song.currentTime = 0;
             play.src = "./img/play-icon.png"
@@ -35,9 +55,9 @@ const app = () => {
     }
 
     timeSelect.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function () {
             fakeDuration = this.getAttribute('data-time');
-            timeDisplay.textContent = `${Math.floor(fakeDuration/60)}:${Math.floor(fakeDuration%60)}`;
+            timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
         });
     });
 };
