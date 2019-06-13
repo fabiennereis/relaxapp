@@ -31,9 +31,11 @@ li > a {
     color: #595959;
     font-weight: 700;
     font-size: 16px;
-    
 }
-
+li > a:hover {
+    color: #2899c0;
+}
+    
 .content {
     height: 100vh;
     display: flex;
@@ -66,4 +68,10 @@ li > a {
 .time button:hover {
     background-color: #2899c0;
     color: #fff;
+}
+
+.play img,
+.pause 
+img {
+    cursor: pointer;
 }
